@@ -1,0 +1,123 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* outline: 2px solid red; */
+    
+}
+
+ body  ,.main {
+    background: linear-gradient(135deg, #b5ada1 0%, #e3e1de 60%);
+}
+.menu{ 
+ font-size: 15px;
+ text-align: center; padding: 1px;
+}
+i ,.i{
+color: #ac8e70;
+}
+i:hover{
+    color: #876b4f;
+    transform: scale(1.1,1.1);
+
+   
+    }
+p{
+color: #090400;
+
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.info{
+    z-index: 100;
+    height: 85vh;
+    
+}
+.section{
+   display: none;
+    margin-top: 16px;
+    height:80vh; 
+    overflow-y: scroll;
+}
+#about,#contact{
+overflow-y: unset;
+}
+.section.active{
+    display: block;
+   
+
+}
+.section {
+    margin-left: 0px;
+    padding: 20px;
+  
+  
+  }
+  p:hover{
+    transform: scale(1.1,1.1);
+
+  }
+
+    @media (max-width: 990px )  {
+        .info{
+            height: fit-content;
+        }
+        .section{
+            display: block;
+            height:fit-content;
+            overflow-y: unset ;
+            
+         }
+
+    }
+
+.work:hover {
+   
+    transform: scale(1.1,1.1);
+   
+  }
+    
+    
+    .work img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+    }
+    
+    .work:hover img {
+        opacity: 0.5; /* Lower the opacity of the image on hover */
+    }
+    
+    .demo-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .work:hover .demo-button {
+        opacity: 1;
+    }
+    
+    .demo-button button {
+        background-color: #b2ad98; /* Adjust color to match your design */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .demo-button button:hover{
+        background-color: #a19e90; /* Adjust color to match your design */
+        color: white;
+    }
