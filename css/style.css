@@ -11,6 +11,54 @@
  body  ,.main {
     background: linear-gradient(135deg, #b5ada1 0%, #e3e1de 60%);
 }
+/* Loading screen styling */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #efeddb; /* Background color of loading screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .spinner {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #d3c3a2, #aeaa94, #756222, #433603);
+    background-size: 200% 200%;
+    animation: rotateScale 1.5s infinite ease-in-out, colorShift 3s infinite linear;
+    border-radius: 8px; /* Rounding the edges for a modern feel */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  /* Keyframes for rotation and scaling */
+  @keyframes rotateScale {
+    0%, 100% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.2);
+    }
+  }
+  
+  /* Keyframes for color gradient shift */
+  @keyframes colorShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Fade-out transition */
+  .fade-out {
+    opacity: 0;
+  }
+  
 .menu{ 
  font-size: 15px;
  text-align: center; padding: 1px;
@@ -35,15 +83,25 @@ color: #090400;
 
 .info{
     z-index: 100;
-    height: 85vh;
-    
+    height: 85vh; 
+ 
 }
+
 .section{
    display: none;
     margin-top: 16px;
     height:80vh; 
     overflow-y: scroll;
+    opacity: 0;
+  transform: translatex(-100px);
+    animation: slideIn 1s ease-out forwards;
 }
+@keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 #about,#contact{
 overflow-y: unset;
 }
@@ -59,7 +117,7 @@ overflow-y: unset;
   
   }
   p:hover{
-    transform: scale(1.1,1.1);
+    transform: scale(1.05);
 
   }
 
@@ -78,7 +136,7 @@ overflow-y: unset;
 
 .work:hover {
    
-    transform: scale(1.1,1.1);
+    transform: scale(1.05);
    
   }
     

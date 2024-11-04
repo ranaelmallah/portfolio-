@@ -6,3 +6,13 @@ function showSection(sectionId){
     if(activeSection)
         activeSection.classList.add('active')
 }
+
+window.addEventListener('load',()=>{
+    setTimeout(()=>{
+        document.getElementById('loading-screen').classList.add('.fade-out')
+        setTimeout(()=>{
+            document.getElementById('loading-screen').style.display='none'
+            document.getElementById('content').style.display='flex'
+        },500)
+    },2000)
+})
